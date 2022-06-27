@@ -21,7 +21,7 @@ public static WebDriver driver;
 	public void setUp(){
 		System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\LatestChromeDriverExe\\chromedriver.exe");
 		driver=new ChromeDriver();
-		//System.out.println("Launching Browser");
+		System.out.println("Launching Browser");
 		
 		}
 	
@@ -31,9 +31,15 @@ public static WebDriver driver;
 		driver.get("https://en-gb.facebook.com/");
 		driver.manage().timeouts().implicitlyWait(20L, TimeUnit.SECONDS);
 		
+		System.out.println("Entering Username");
 		driver.findElement(By.xpath("//*[@id='email']")).sendKeys("vairajapu@gmail.com");
+		
+		System.out.println("Entering password");
 		driver.findElement(By.xpath(".//*[@id='pass']")).sendKeys("vai2017raj");
+		
+		System.out.println("Clicking on LogIn Button");
 		driver.findElement(By.name("login")).click();
+		
 		System.out.println("Loginning into facebook account");
 		}
 	
